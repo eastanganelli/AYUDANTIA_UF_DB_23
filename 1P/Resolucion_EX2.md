@@ -1,13 +1,13 @@
 # Ejercicio 2
 ## MR
-- ELABORA (laboratorio, droga)
-- PRODUCE (laboratorio, remedio)
-- VENDE (farmacia, remedio, precio)
-- COMPUESTO_POR (remedio, droga)
-- RECETA (CodBarras, fecha, medico.matricula, paciente)
-- RECETADOS (CodBarras, remedio)
-- MEDICO (matricula, nombre, apellido, dirección, localidad, teléfono)
-- REMEDIO (nombre, laboratorio, precio)
+- ELABORA (<ins>laboratorio, droga</ins>)
+- PRODUCE (<ins>laboratorio, remedio</ins>)
+- VENDE (<ins>farmacia</ins>, <ins>remedio</ins>, precio)
+- COMPUESTO_POR (<ins>remedio, droga</ins>)
+- RECETA (<ins>CodBarras</ins>, fecha, medico.matricula, paciente)
+- RECETADOS (<ins>CodBarras</ins>, remedio)
+- MEDICO (<ins>matricula</ins>, nombre, apellido, dirección, localidad, teléfono)
+- REMEDIO (<ins>nombre, laboratorio</ins>, precio)
 ---
 ### <i>a.</i> Listar las drogas que componen los remedios recetados durante todo el mes de enero de 2023 por el doctor Julián Álvarez, matricula 123456.
 <b>SQL</b>
