@@ -1,0 +1,168 @@
+group: 1er Parcial - Base de Datos
+description: Ejercicio 2
+category@es: Universidad Favaloro
+
+ELABORA = {
+laboratorio,droga
+
+Lab_E,codeine
+Lab_H,aspirin
+Lab_B,methamphetamine
+Lab_D,cocaine
+Lab_G,metformina
+Lab_I,tramadol
+Lab_B,ibuprofen
+Lab_E,metformina
+Lab_G,codeine
+Lab_B,fentanyl
+}
+
+VENDE = {
+farmacia, remedioNom, remedioLab, precio
+'Farmacia_Benavides', 'Aspirin', 'Lab_I', 3842
+'Farmacity', 'Paracetamol', 'Lab_E', 2999
+'Farmacia_San_Pablo', 'Diclofenac', 'Lab_C', 3740
+'Farmacia_San_Pablo', 'Gastec', 'Lab_H', 2370
+'Farmacity', 'Paracetamol', 'Lab_E', 2999
+'Farmacity', 'Paracetamol', 'Lab_E', 6245
+'Farmacia_San_Pablo', 'Diclofenac', 'Lab_C', 4175
+'Farmacia_San_Pablo', 'Naproxen', 'Lab_J', 2625
+'Farmacia_Guadalajara', 'Gastec', 'Lab_D', 469
+'Farmacia_San_Pablo', 'Paracetamol', 'Lab_E', 3849
+'Farmacia_Benavides', 'Diclofenac', 'Lab_C', 2859
+'Farmacia_San_Pablo', 'Gastec', 'Lab_D', 1224
+'Farmacia_San_Pablo', 'Naproxen', 'Lab_J', 3342
+'Farmacity', 'Aspirin', 'Lab_I', 2277
+'Farmacia_San_Pablo', 'Aspirin', 'Lab_I', 1422
+'Farmacity', 'Ibuprofen', 'Lab_B', 2878
+'Farmacia_Guadalajara', 'Gastec', 'Lab_H', 2490
+'Farmacity', 'Paracetamol', 'Lab_E', 4357
+'Farmacity', 'Paracetamol', 'Lab_E', 2345
+'Farmacity', 'Paracetamol', 'Lab_E', 3455
+'Farmacia_San_Pablo', 'Diclofenac', 'Lab_C', 2992
+'Farmacia_Guadalajara', 'Diclofenac', 'Lab_C', 1792
+'Farmacia_Guadalajara', 'Gastec', 'Lab_H', 1354
+'Farmacia_Guadalajara', 'Naproxen', 'Lab_J', 3645
+}
+
+PRODUCE = {
+laboratorio,remedioNom,remedioLab
+
+Lab_H,Gastec,Lab_H
+Lab_D,Gastec,Lab_D
+Lab_F,Morphine,Lab_F
+Lab_I,Aspirin,Lab_I
+Lab_E,Paracetamol,Lab_E
+Lab_B,Codeine,Lab_B
+Lab_F,Codeine,Lab_F
+}
+
+REMEDIO = {
+nombre,laboratorio,precio
+
+Codeine,Lab_B,2052
+Diclofenac,Lab_C,4443
+Paracetamol,Lab_E,1858
+Gastec,Lab_D,1230
+Naproxen,Lab_F,3620
+Tramadol,Lab_E,3767
+Naproxen,Lab_E,3487
+Diclofenac,Lab_G,3672
+Codeine,Lab_H,4002
+Codeine,Lab_D,4148
+Morphine,Lab_F,2063
+Aspirin,Lab_I,2017
+Codeine,Lab_G,3314
+Gastec,Lab_H,854
+Ibuprofen,Lab_B,2040
+Naproxen,Lab_J,2054
+Acetaminophen,Lab_D,4708
+Acetaminophen,Lab_D,4894
+Codeine,Lab_F,4506
+Aspirin,Lab_I,3126
+}
+
+COMPUESTO_POR = {
+remedioNom,remedioLab,drogaLab,drogaNom
+
+Diclofenac,Lab_G,Lab_E,codeine
+Diclofenac,Lab_G,Lab_H,aspirin
+Diclofenac,Lab_G,Lab_G,metformina
+Codeine,Lab_D,Lab_B,methamphetamine
+Diclofenac,Lab_C,Lab_B,fentanyl
+Morphine,Lab_F,Lab_B,ibuprofen
+Naproxen,Lab_E,Lab_H,aspirin
+Naproxen,Lab_E,Lab_B,fentanyl
+Gastec,Lab_H,Lab_G,metformina
+Paracetamol,Lab_E,Lab_B,methamphetamine
+Ibuprofen,Lab_B,Lab_B,methamphetamine
+Paracetamol,Lab_E,Lab_B,ibuprofen
+Morphine,Lab_F,Lab_G,metformina
+Codeine,Lab_D,Lab_H,aspirin
+Gastec,Lab_D,Lab_I,tramadol
+Aspirin,Lab_I,Lab_E,codeine
+Aspirin,Lab_I,Lab_B,fentanyl
+Aspirin,Lab_I,Lab_B,ibuprofen
+Diclofenac,Lab_C,Lab_B,methamphetamine
+}
+
+RECETADOS = {
+codBarras,remedioNom,remedioLab
+
+A86221,Diclofenac,Lab_C
+05472,Diclofenac,Lab_G
+E9461,Aspirin,Lab_B
+E9053,Gastec,Lab_D
+V5868,Morphine,Lab_A
+0906,Diclofenac,Lab_J
+53784,Ibuprofen,Lab_C
+75533,Gastec,Lab_D
+75656,Paracetamol,Lab_E
+5561,Paracetamol,Lab_E
+9152,Diclofenac,Lab_G
+9931,Aspirin,Lab_I
+0658,Aspirin,Lab_I
+37632,Paracetamol,Lab_G
+33521,Codeine,Lab_D
+1302,Aspirin,Lab_J
+E8629,Aspirin,Lab_B
+V013,Gastec,Lab_D
+}
+
+RECETA = {
+codBarras,fecha,medMat,paciente
+
+V5868,10-02-2023,d7231115918,Leelah_William
+V013,21-04-2023,4350998632,Barbey_Beves
+05472,22-03-2023,7824909743,Butch_Weildish
+9152,03-02-2023,8806001191,Stella_Tweedy
+E9053,08-01-2023,123456,Cornell_Barlow
+5561,17-04-2023,d7003263513,Nannie_Skein
+A86221,16-04-2023,1287480896,Cristie_Fahy
+05472,11-03-2023,6899930625,Nicole_St._Quintin
+0658,24-02-2023,4444175222,Shari_Kasparski
+1302,21-01-2023,123456,Erinn_Laurens
+33521,29-03-2023,6899930625,Gloria_Ugolotti
+75533,13-04-2023,4444175222,Malcolm_Heims
+75656,12-01-2023,7824909743,Silvan_Lunt
+}
+
+MEDICO = {
+matricula,nombre,apellido,direccion,telefono,localidad
+
+4444175222,Suzi,Eggerton,3678_6th_Parkway,62_760_983_9673,Santa_Fe
+2286428786,Iris,Love,16_Hoard_Plaza,86_466_106_5762,Santa_Fe
+9685175578,Demetrius,Sturgis,6_Monterey_Avenue,62_958_519_2514,La_Plata
+1287480896,Ernestus,Keith,83414_Troy_Place,30_714_677_4906,Cordoba
+4350998632,Meagan,Danels,679_Sauthoff_Circle,51_570_396_1833,San_Juan
+2619434300,Bradly,Kos,114_Corry_Lane,55_726_881_0318,Cordoba
+7824909743,Chandal,Twamley,7_Goodland_Lane,62_546_909_3524,Cordoba
+5815374601,Laryssa,Jentgens,25704_Sachs_Point,86_363_454_5140,Santa_Fe
+0527971812,Solomon,Crownshaw,6960_Iowa_Terrace,62_657_972_0438,Buenos_Aires
+123456,Julian,Alvarez,7_Carberry_Place,82_125_550_3101,Buenos_Aires
+4052325370,Helen,Rosenthal,8_Mockingbird_Terrace,255_645_798_3199,Cordoba
+6899930625,Gwenneth,Verny,7_Manitowish_Center,7_251_167_7576,Santa_Fe
+8806001191,Flora,Creaser,0677_Pond_Circle,86_165_909_1556,Rosario
+7231115918,Winston,Pays,73_Dunning_Crossing,1_808_326_3063,Santa_Fe
+7003263513,Elsinore,Randell,2_Schmedeman_Avenue,63_927_595_1526,Mendoza
+}
