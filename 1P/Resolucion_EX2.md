@@ -45,29 +45,18 @@ order by Cantidad DESC
 ### <i>c.</i> Listar los remedios cuyos precios son mayores al remedio más vendido en FARMACITY.
 <b>SQL</b>
 ```sql
+WITH 
+	MaxFarmacity AS (select COUNT(*) as cant, AVG(VENDE.precio) as precio from VENDE where VENDE.farmacia like 'Farmacity' group by VENDE.remedioNom limit 1)
+
 select
-	VENDE.remedioNom,
-	VENDE.remedioLab,
-	VENDE.precio
-from VENDE, (
-			select
-				VENDE.remedioNom,
-				VENDE.remedioLab,
-				count(*) as cantidad,
-				avg(VENDE.precio) as precio
-			from VENDE
-			where VENDE.farmacia like '%Farmacity%'
-			group by VENDE.remedioNom, VENDE.remedioLab
-			order by cantidad Desc
-			limit 1
-		) as R
-where VENDE.precio > R.precio
+	REMEDIO.nombre,
+	REMEDIO.laboratorio
+from MaxFarmacity, REMEDIO
+where REMEDIO.precio > MaxFarmacity.precio
 ```
 <b>Algebra Relacional</b>
 ```
-MasVendido = ρ R ( σ ROWNUM() > 0 and ROWNUM() ≤ 1 τ cantidad desc π VENDE.remedioNom, VENDE.remedioLab, cantidad, precio γ VENDE.remedioNom, VENDE.remedioLab; COUNT(*)→cantidad, AVG(VENDE.precio)→precio σ VENDE.farmacia like '%Farmacity%' VENDE )
-
-π VENDE.remedioNom, VENDE.remedioLab, VENDE.precio σ VENDE.precio > R.precio ( VENDE ⨯ MasVendido )
+π REMEDIO.nombre, REMEDIO.laboratorio σ REMEDIO.precio > MaxFarmacity.precio ( ρ MaxFarmacity ( σ ROWNUM() > 0 and ROWNUM() ≤ 1 π cant, precio γ VENDE.remedioNom; COUNT(*)→cant, AVG(VENDE.precio)→precio σ VENDE.farmacia like 'Farmacity' VENDE ) ⨯ REMEDIO )
 ```
 <br>
 
